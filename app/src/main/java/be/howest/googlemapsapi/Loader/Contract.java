@@ -13,5 +13,6 @@ public class Contract {
         public static final String COLUMN_TELEFOON = "telefoon";
         public static final String COLUMN_WEBSITE = "website";
         public static final String COLUMN_FOTO = "foto";
+        public static final String COLUMN_AFSTAND = "afstand";
     }
 }

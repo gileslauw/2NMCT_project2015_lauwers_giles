@@ -49,39 +49,40 @@ public class LocationFragment extends Fragment {
         }
 
         googleMap = mMapView.getMap();
+        googleMap.setMyLocationEnabled(true);
         // latitude and longitude
-       // double latitude = 17.385044;
-       // double longitude = 78.486671;
+        // double latitude = 17.385044;
+        // double longitude = 78.486671;
 
         Geocoder gc = new Geocoder(getActivity());
         try{
-        if(gc.isPresent()){
-            List<Address> list = gc.getFromLocationName(getArguments().getString("adres"), 1);
+            if(gc.isPresent()){
+                List<Address> list = gc.getFromLocationName(getArguments().getString("adres"), 1);
 
-            Address address = list.get(0);
+                Address address = list.get(0);
 
-            double latitude = address.getLatitude();
-            double longitude = address.getLongitude();
-            LatLng loc = new LatLng(latitude,longitude);
+                double latitude = address.getLatitude();
+                double longitude = address.getLongitude();
+                LatLng loc = new LatLng(latitude,longitude);
 
 
-        // create marker
-        MarkerOptions marker = new MarkerOptions().position(
-                new LatLng(latitude, longitude)).title("Hello Maps");
+                // create marker
+                MarkerOptions marker = new MarkerOptions().position(
+                        new LatLng(latitude, longitude));
 
-        // Changing marker icon
-        marker.icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_ROSE));
+                // Changing marker icon
+                marker.icon(BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_RED));
 
-        // adding marker
-        googleMap.addMarker(marker);
-        CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(loc).zoom(12).build();
-        googleMap.animateCamera(CameraUpdateFactory
-                .newCameraPosition(cameraPosition));
+                // adding marker
+                googleMap.addMarker(marker);
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(loc).zoom(12).build();
+                googleMap.animateCamera(CameraUpdateFactory
+                        .newCameraPosition(cameraPosition));
 
-        // Perform any camera updates here
-        }}catch (IOException e){
+                // Perform any camera updates here
+            }}catch (IOException e){
 
         }
         return v;

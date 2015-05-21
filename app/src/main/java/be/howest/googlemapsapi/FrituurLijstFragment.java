@@ -40,18 +40,19 @@ public class FrituurLijstFragment extends ListFragment implements LoaderManager.
         String[] columns = new String[]
                 {
                         Contract.FrituurColumns.COLUMN_NAAM,
-                        Contract.FrituurColumns.COLUMN_FOTO,
-                        Contract.FrituurColumns.COLUMN_ADRES,
-                        Contract.FrituurColumns.COLUMN_TELEFOON,
-                        Contract.FrituurColumns.COLUMN_WEBSITE
+                        // Contract.FrituurColumns.COLUMN_FOTO,
+                        Contract.FrituurColumns.COLUMN_AFSTAND
+                        //  Contract.FrituurColumns.COLUMN_ADRES,
+                        //  Contract.FrituurColumns.COLUMN_TELEFOON,
+                        //  Contract.FrituurColumns.COLUMN_WEBSITE
 
                 };
 
         int[] viewIds = new int[]
                 {
                         R.id.tvNaam,
-                        R.id.imgFoto
-                        //R.id.tvKilometer
+                        //R.id.imgFoto,
+                        R.id.tvKilometer
 
                 };
 
@@ -101,11 +102,12 @@ public class FrituurLijstFragment extends ListFragment implements LoaderManager.
         intent.putExtras(extras);
         startActivity(intent);
 
-       // Intent intent = new Intent();
-       // intent.putExtra(MainActivity.IMAGE_HOROSCOOP,picture);
-       // setResult(RESULT_OK,intent);
-       // finish();
+        // Intent intent = new Intent();
+        // intent.putExtra(MainActivity.IMAGE_HOROSCOOP,picture);
+        // setResult(RESULT_OK,intent);
+        // finish();
 
     }
 
 }
+
